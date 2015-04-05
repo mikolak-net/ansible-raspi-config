@@ -1,4 +1,4 @@
-Role Name
+ansible-raspi-config
 =========
 
 A configuration role for Raspbian-based Raspberry Pi machines. Provides the following features:
@@ -9,7 +9,18 @@ A configuration role for Raspbian-based Raspberry Pi machines. Provides the foll
 Requirements
 ------------
 
-None.
+None, other than installing the role itself. To do that, create a `requirements.yml` file next to your playbook with
+the following contents:
+
+     - name: ansible-raspi-config
+       src: https://github.com/mikolak-net/ansible-raspi-config
+
+and then run:
+
+    ansible-galaxy install -r requirements.yml
+    
+The role and its dependencies should be now installed and ready to reference in your playbook via the name given
+in the requirements file.    
 
 Role Variables
 --------------
