@@ -1,0 +1,9 @@
+---
+- name: camera - ensure memory
+  pi_boot_config: config_vals=gpu_mem=128
+  when: raspi_config_enable_camera and raspi_config_memory_split_gpu < raspi_config_min_camera_mem
+- name: camera - set state
+  pi_boot_config: config_vals=start_x={{raspi_config_enable_camera|int}}
+  notify:
+    - apply raspi-config
+    - reboot

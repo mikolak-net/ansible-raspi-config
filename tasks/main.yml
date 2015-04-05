@@ -1,0 +1,30 @@
+---
+- name: update all packages
+  apt: update_cache=yes upgrade=dist
+  when: raspi_config_update_packages
+- include: security_check.yml
+- name: ensure filesystem is resized
+  expand_fs:
+  when: raspi_config_expanded_filesystem
+- name: ensure mem split
+  pi_boot_config: config_vals=gpu_mem={{raspi_config_memory_split_gpu}}
+  notify:
+    - apply raspi-config
+    - reboot
+- name: ensure correct CPU parameters for Pi2
+  ensure_pi2_oc:
+  args:
+    cpu_types: "{{raspi_config_pi_cpu}}"
+  when: raspi_config_ensure_optimal_cpu_params
+  notify:
+    - apply raspi-config
+    - reboot
+- name: set camera state
+  include: camera.yml
+- name: set additional config vars
+  pi_boot_config:
+  args:
+    config_vals: "{{raspi_config_other_options}}"
+  notify:
+    - apply raspi-config
+    - reboot

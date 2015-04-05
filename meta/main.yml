@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Mikołaj Koziarkiewicz
+  description: Sets up basic configuration for a headless Raspberry Pi Raspbian server.
+  company: mikołak
+  license: BSD
+  min_ansible_version: 1.8
+  platforms:
+  - name: Raspbian
+  categories:
+  - development
+  - system
+dependencies:
+  - { role: knopki.locale, version: "v1.0.3", locale_all: "{{raspi_config_locale}}" }
+  - { role: Stouts.timezone, version: "2.0.1", timezone_timezone: "{{raspi_config_timezone}}" }
+  - { role: Stouts.hostname, version: "1.0.3", hostname_hostname: "{{raspi_config_hostname}}" }
+  

@@ -1,0 +1,7 @@
+---
+- name: ensure utility present
+  apt: name=sshpass state=present
+- name: check for login
+  command: sshpass -p {{raspi_config_auth_test_password}} ssh {{raspi_config_auth_test_username}}@localhost -o NoHostAuthenticationForLocalhost=yes "echo {{raspi_config_auth_test_string}}"
+  register: auth_test
+  failed_when: "raspi_config_fail_on_auth_test and raspi_config_auth_test_string in auth_test.stdout"
