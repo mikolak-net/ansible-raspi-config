@@ -10,6 +10,7 @@ BOOT_CONFIG_PATH = "/boot/config.txt"
 
 RASPI_CONFIG_BIN = "/usr/bin/raspi-config"
 
+
 class ConfigFile:
 
     @staticmethod
@@ -64,7 +65,6 @@ def read_oc_params():
     with open(RASPI_CONFIG_BIN) as fp:
         oc_config = CONFIG_OC_REGEXP.search(fp.read()).groupdict()
     return oc_config
-
 
 
 def main():

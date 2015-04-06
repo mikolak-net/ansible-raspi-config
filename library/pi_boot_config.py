@@ -10,6 +10,7 @@ BOOT_CONFIG_PATH = "/boot/config.txt"
 
 RASPI_CONFIG_BIN = "/usr/bin/raspi-config"
 
+
 class ConfigFile:
 
     @staticmethod
@@ -67,7 +68,7 @@ def main():
     out = ""
     err = ""
 
-    #sanitize from auto-typing in YAML
+    # sanitize from auto-typing in YAML
     config_vals = dict((str(key), str(val)) for (key, val) in config_vals.iteritems())
 
     for (key, val) in config_vals.iteritems():
