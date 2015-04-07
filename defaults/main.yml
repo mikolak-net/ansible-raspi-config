@@ -16,6 +16,7 @@ raspi_config_hostname: pi
 # ensure camera support is on - CURRENTLY UNVERIFIED
 raspi_config_enable_camera: no
 # specify whether to fail deployment when user/password is default
+# ignored if "raspi_config_replace_user" is set (warning will still display)
 raspi_config_fail_on_auth_test: yes
 # user to replace the default "pi" user with
 # NOTE: if you use this for the first time as "pi", any post_tasks will fail!
