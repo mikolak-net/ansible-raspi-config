@@ -13,16 +13,21 @@ None, other than installing the role itself. To do that, create a `requirements.
 the following contents:
 
 ```yaml
-- name: raspi-config
-  src: https://github.com/mikolak-net/ansible-raspi-config
+- name: mikołak.raspi-config
 ```
 
 and then run:
 
     ansible-galaxy install -r requirements.yml
-    
+
 The role and its dependencies should be now installed and ready to reference in your playbook via the name given
 in the requirements file.    
+
+_Note:_ you can also install the role directly:
+
+    ansible-galaxy install mikołak.raspi-config
+    
+but creating a requirements file is just good practice.
 
 Role Variables
 --------------
@@ -64,7 +69,7 @@ Example Playbook
 ```yaml
 - hosts: pi*
   roles:
-     - { role: raspi-config }
+     - { role: mikołak.raspi-config }
 ```
 
 License
