@@ -1,0 +1,13 @@
+---
+- name: Create user {{raspi_config_replace_user['name']}}
+  user: name={{raspi_config_replace_user['name']}}
+  changed_when: True #to force handler call
+  notify:
+    - remove default user
+- name: Add your login key to {{raspi_config_replace_user['name']}}
+  authorized_key: user={{raspi_config_replace_user['name']}} key="{{ lookup('file', raspi_config_replace_user['path_to_ssh_key']) }}"
+- name: Add {{raspi_config_replace_user['name']}} to sudoers
+  lineinfile:
+  args:
+    dest: /etc/sudoers
+    line: "{{raspi_config_replace_user['name']}} ALL=(ALL) NOPASSWD: ALL"

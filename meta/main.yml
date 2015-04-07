@@ -11,7 +11,6 @@ galaxy_info:
   - development
   - system
 dependencies:
-  - { role: knopki.locale, version: "v1.0.3", locale_all: "{{raspi_config_locale}}" }
-  - { role: Stouts.timezone, version: "2.0.1", timezone_timezone: "{{raspi_config_timezone}}" }
-  - { role: Stouts.hostname, version: "1.0.3", hostname_hostname: "{{raspi_config_hostname}}" }
-  
+  - { role: "knopki.locale", version: "v1.0.3", locale_all: "{{raspi_config_locale}}" }
+  - { role: "Stouts.timezone", version: "2.0.1", timezone_timezone: "{{raspi_config_timezone}}" }
+  - { role: "Stouts.hostname", version: "1.0.3", hostname_hostname: "{{raspi_config_hostname}}" }

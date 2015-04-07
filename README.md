@@ -53,6 +53,11 @@ raspi_config_hostname: pi
 raspi_config_enable_camera: no
 # specify whether to fail deployment when user/password is default
 raspi_config_fail_on_auth_test: yes
+# user to replace the default "pi" user with
+# NOTE: if you use this for the first time as "pi", any post_tasks will fail!
+raspi_config_replace_user:
+  name:
+  path_to_ssh_key: #LOCAL path to your public key file
 # use this to add any additional options to the config in raw form
 raspi_config_other_options: {}
 ```
@@ -68,8 +73,13 @@ Example Playbook
 
 ```yaml
 - hosts: pi*
+  remote_user: pi
+  sudo: true
   roles:
-     - { role: mikołak.raspi-config }
+     - role: mikołak.raspi-config
+       raspi_config_replace_user:
+         name: mainuser
+         path_to_ssh_key: "~/.ssh/my_pub_key_id_rsa.pub"
 ```
 
 License
