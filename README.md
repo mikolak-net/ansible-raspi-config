@@ -13,7 +13,7 @@ None, other than installing the role itself. To do that, create a `requirements.
 the following contents:
 
 ```yaml
-- name: mikołak.raspi-config
+- name: mikolak.raspi-config
 ```
 
 and then run:
@@ -25,7 +25,7 @@ in the requirements file.
 
 _Note:_ you can also install the role directly:
 
-    ansible-galaxy install mikołak.raspi-config
+    ansible-galaxy install mikolak.raspi-config
     
 but creating a requirements file is just good practice.
 
@@ -77,7 +77,7 @@ Example Playbook
   remote_user: pi
   sudo: true
   roles:
-     - role: mikołak.raspi-config
+     - role: mikolak.raspi-config
        raspi_config_replace_user:
          name: mainuser
          path_to_ssh_key: "~/.ssh/my_pub_key_id_rsa.pub"
