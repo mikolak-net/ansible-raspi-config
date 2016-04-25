@@ -11,6 +11,13 @@ galaxy_info:
   - development
   - system
 dependencies:
-  - { role: "knopki.locale", version: "v1.0.3", locale_all: "{{raspi_config_locale}}" }
-  - { role: "Stouts.timezone", version: "2.0.1", timezone_timezone: "{{raspi_config_timezone}}" }
-  - { role: "Stouts.hostname", version: "1.0.3", hostname_hostname: "{{raspi_config_hostname}}" }
+  - name: "knopki.locale"
+    src: "git+https://github.com/knopki/ansible-locale.git"
+    version: "a1232f836b5514c58da381d9479640e40d874906" # includes fix for superfluous locale switch
+  - role: "Stouts.timezone"
+    version: "2.0.1"
+    timezone_timezone: "raspi_config_timezone"
+    locale_all: "raspi_config_locale"
+  - role: "Stouts.hostname"
+    version: "1.0.3"
+    hostname_hostname: "raspi_config_hostname"
