@@ -16,7 +16,7 @@
 - name: wait for reboot
   local_action: wait_for host={{ inventory_hostname }}
                 state=started
-                timeout=30 # doesn't appear to work correctly now, instead a simple delay is imposed - that's fine for now
+                timeout={{ raspi_config_reboot_timeout }} # doesn't appear to work correctly now, instead a simple delay is imposed - that's fine for now
   sudo: false
 
 - name: remove default user
