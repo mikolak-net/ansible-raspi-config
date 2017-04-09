@@ -3,8 +3,6 @@
 - name: apply raspi-config
   command: raspi-config --apply-os-config
 
-  # using the Ansible blog post solution:
-  # https://support.ansible.com/hc/en-us/articles/201958037-Reboot-a-server-and-wait-for-it-to-come-back
 - name: reboot
   command: shutdown -r now
   async: 0
