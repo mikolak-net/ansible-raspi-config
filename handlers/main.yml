@@ -4,10 +4,9 @@
   command: raspi-config --apply-os-config
 
 - name: reboot
-  command: shutdown -r now
+  shell: "(sleep {{ raspi_config_reboot_delay }} && shutdown -r now) &"
   async: 0
   poll: 0
-  ignore_errors: True
   notify:
     - wait for reboot
 

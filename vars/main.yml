@@ -8,3 +8,4 @@ raspi_config_auth_test_fail_msg: ABLE TO SSH IN WITH FACTORY CREDENTIALS - ASSUM
 raspi_config_auth_test_replace_info: User "pi" will be replaced by {{raspi_config_replace_user['name']}} at the end of role execution
 raspi_config_auth_test_username: pi
 raspi_config_auth_test_password: raspberry
+raspi_config_reboot_delay: 1
