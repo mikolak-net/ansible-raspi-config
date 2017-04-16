@@ -66,7 +66,6 @@ raspi_config_other_options: {}
 
 Dependencies
 ------------
-
 See `dependencies` in `meta/main.yml`.
 
 Example Playbook
@@ -92,3 +91,6 @@ Author Information
 ------------------
 
 Issues should be reported on the [project page](https://github.com/mikolak-net/ansible-raspi-config).
+
+Thanks to:
+ - [Colin Nolan](https://github.com/colin-nolan) for contributing reboot handler fixes.
