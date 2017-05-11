@@ -26,3 +26,9 @@
   async: 0
   poll: 0
   ignore_errors: True
+
+- name: restart timezone dependent services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items: "{{ raspi_config_timezone_dependent_services }}"

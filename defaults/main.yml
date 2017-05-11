@@ -11,6 +11,8 @@ raspi_config_ensure_optimal_cpu_params: yes
 raspi_config_locale: en_US.UTF8
 # set timezone
 raspi_config_timezone: UTC
+# list of services that should be restarted if the timezone is changed
+raspi_config_timezone_dependent_services: []
 # set hostname
 raspi_config_hostname: pi
 # ensure camera support is on - CURRENTLY UNVERIFIED
