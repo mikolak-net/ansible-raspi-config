@@ -47,6 +47,8 @@ raspi_config_ensure_optimal_cpu_params: yes
 raspi_config_locale: en_US.UTF8
 # set timezone
 raspi_config_timezone: UTC
+# list of services that should be restarted if the timezone is changed
+raspi_config_timezone_dependent_services: []
 # set hostname
 raspi_config_hostname: pi
 # ensure camera support is on - CURRENTLY UNVERIFIED
@@ -66,7 +68,6 @@ raspi_config_other_options: {}
 
 Dependencies
 ------------
-
 See `dependencies` in `meta/main.yml`.
 
 Example Playbook
@@ -92,3 +93,6 @@ Author Information
 ------------------
 
 Issues should be reported on the [project page](https://github.com/mikolak-net/ansible-raspi-config).
+
+Thanks to:
+ - [Colin Nolan](https://github.com/colin-nolan) for contributing reboot handler fixes.

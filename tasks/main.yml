@@ -2,6 +2,10 @@
 - name: update all packages
   apt: update_cache=yes upgrade=dist
   when: raspi_config_update_packages
+- name: sets the timezone
+  timezone:
+    name: "{{raspi_config_timezone}}"
+  notify: restart timezone dependent services
 - include: setup_replace_user.yml
   when: raspi_config_replace_user['name'] != None
 - include: security_check.yml

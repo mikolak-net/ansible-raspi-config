@@ -11,6 +11,8 @@ raspi_config_ensure_optimal_cpu_params: yes
 raspi_config_locale: en_US.UTF8
 # set timezone
 raspi_config_timezone: UTC
+# list of services that should be restarted if the timezone is changed
+raspi_config_timezone_dependent_services: []
 # set hostname
 raspi_config_hostname: pi
 # ensure camera support is on - CURRENTLY UNVERIFIED
@@ -25,3 +27,5 @@ raspi_config_replace_user:
   path_to_ssh_key: #LOCAL path to your public key file
 # use this to add any additional options to the config in raw form
 raspi_config_other_options: {}
+# maximum number of seconds to wait for the machine to reboot
+raspi_config_reboot_timeout: 300
