@@ -76,7 +76,7 @@ Example Playbook
 ```yaml
 - hosts: pi*
   remote_user: pi
-  sudo: true
+  become: true
   roles:
      - role: mikolak.raspi-config
        raspi_config_replace_user:
