@@ -1,4 +1,5 @@
 ---
+
 raspi_config_pi_cpu:
   Pi1: BCM2708
   Pi2: BCM2709
