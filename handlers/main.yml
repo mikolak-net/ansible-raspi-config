@@ -4,8 +4,8 @@
   command: raspi-config --apply-os-config
 
 - name: reboot
-  shell: "(sleep {{ raspi_config_reboot_delay }} && shutdown -r now) &"
-  async: 0
+  shell: "reboot"
+  async: "{{ raspi_config_reboot_timeout }}"
   poll: 0
   notify:
     - wait for reboot
@@ -17,8 +17,8 @@
     host: "{{ ansible_host }}"
     port: "{{ ansible_port | default(22) }}"
     state: started
-    delay: "{{ raspi_config_reboot_delay }}"
-    timeout: "{{ raspi_config_reboot_timeout }}"
+    delay: "{{ raspi_config_reboot_min_time }}"
+    timeout: "{{ raspi_config_reboot_max_time }}"
 
 - name: remove default user
   when: "raspi_config_replace_user['name'] != raspi_config_auth_test_username"
