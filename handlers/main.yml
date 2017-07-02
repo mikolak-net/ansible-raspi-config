@@ -5,7 +5,7 @@
 
 - name: reboot
   shell: "reboot"
-  async: "{{ raspi_config_reboot_timeout }}"
+  async: "{{ raspi_config_reboot_max_time }}"
   poll: 0
   notify:
     - wait for reboot
