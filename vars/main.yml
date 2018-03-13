@@ -1,4 +1,5 @@
 ---
+
 raspi_config_pi_cpu:
   Pi1: BCM2708
   Pi2: BCM2709
@@ -9,4 +10,3 @@ raspi_config_auth_test_replace_info: User "pi" will be replaced by {{raspi_confi
 raspi_config_auth_test_username: pi
 raspi_config_auth_test_password: raspberry
 raspi_config_reboot_min_time: 5
-raspi_config_reboot_max_time: 300
