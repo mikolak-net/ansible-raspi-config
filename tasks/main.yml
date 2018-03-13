@@ -11,10 +11,10 @@
     name: "{{ raspi_config_timezone }}"
   notify: restart timezone dependent services
 
-- include: setup_replace_user.yml
+- import_tasks: setup_replace_user.yml
   when: raspi_config_replace_user['name'] != None
 
-- include: security_check.yml
+- import_tasks: security_check.yml
 
 - name: ensure filesystem is resized
   expand_fs:
@@ -37,7 +37,7 @@
     - reboot
 
 - name: set camera state
-  include: camera.yml
+  import_tasks: camera.yml
 - name: set additional config vars
   pi_boot_config:
   args:
