@@ -5,7 +5,7 @@
 
 - name: reboot
   shell: "reboot"
-  async: "{{ raspi_config_reboot_max_time }}"
+  async: "{{ raspi_config_reboot_max_wait_time }}"
   poll: 0
   notify:
     - wait for reboot
@@ -18,7 +18,7 @@
     port: "{{ ansible_port | default(22) }}"
     state: started
     delay: "{{ raspi_config_reboot_min_time }}"
-    timeout: "{{ raspi_config_reboot_max_time }}"
+    timeout: "{{ raspi_config_reboot_max_wait_time }}"
 
 - name: remove default user
   when: "raspi_config_replace_user['name'] != raspi_config_auth_test_username"

@@ -61,6 +61,8 @@ raspi_config_fail_on_auth_test: yes
 raspi_config_replace_user:
   name:
   path_to_ssh_key: #LOCAL path to your public key file
+# wait this many seconds before forcing connection retry after reboot
+raspi_config_reboot_max_wait_time: 300
 # use this to add any additional options to the config in raw form
 raspi_config_other_options: {}
 ```
