@@ -44,7 +44,7 @@ raspi_config_memory_split_gpu: 16
 #currently sets Pi2 OC setting if applicable
 raspi_config_ensure_optimal_cpu_params: yes
 # set global locale
-raspi_config_locale: en_US.UTF8
+raspi_config_locale: en_US.UTF-8
 # set timezone
 raspi_config_timezone: UTC
 # list of services that should be restarted if the timezone is changed
