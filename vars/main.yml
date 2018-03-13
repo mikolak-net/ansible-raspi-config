@@ -3,6 +3,7 @@
 raspi_config_pi_cpu:
   Pi1: BCM2708
   Pi2: BCM2709
+  Pi3: BCM2710
 raspi_config_min_camera_mem: 128
 raspi_config_auth_test_string: VULN
 raspi_config_auth_test_fail_msg: ABLE TO SSH IN WITH FACTORY CREDENTIALS - ASSUME PWNED IF SSH OPEN TO THE INTERNET
