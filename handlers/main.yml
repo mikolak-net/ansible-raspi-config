@@ -4,19 +4,14 @@
   command: raspi-config --apply-os-config
 
 - name: reboot
-  shell: "reboot"
-  async: "{{ raspi_config_reboot_max_wait_time }}"
+  shell: "sleep 1 && shutdown -r now +1"
+  async: 1
   poll: 0
   notify:
     - wait for reboot
 
 - name: wait for reboot
-  become: no
-  delegate_to: 127.0.0.1
-  wait_for:
-    host: "{{ ansible_host }}"
-    port: "{{ ansible_port | default(22) }}"
-    state: started
+  wait_for_connection:
     delay: "{{ raspi_config_reboot_min_time }}"
     timeout: "{{ raspi_config_reboot_max_wait_time }}"
 

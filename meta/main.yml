@@ -5,7 +5,7 @@ galaxy_info:
   description: Sets up basic configuration for a headless Raspberry Pi Raspbian server.
   company: mikołak
   license: BSD
-  min_ansible_version: 2.2
+  min_ansible_version: 2.3
   platforms:
     - name: Raspbian
   categories:
