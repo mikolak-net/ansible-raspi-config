@@ -28,5 +28,4 @@ raspi_config_replace_user:
   path_to_ssh_key: #LOCAL path to your public key file
 # use this to add any additional options to the config in raw form
 raspi_config_other_options: {}
-# maximum number of seconds to wait for the machine to reboot
-raspi_config_reboot_timeout: 300
+raspi_config_reboot_max_time: 300
