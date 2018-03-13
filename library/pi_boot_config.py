@@ -69,9 +69,9 @@ def main():
     err = ""
 
     # sanitize from auto-typing in YAML
-    config_vals = dict((str(key), str(val)) for (key, val) in config_vals.items())
+    config_vals = dict((str(key), str(val)) for (key, val) in list(config_vals.items()))
 
-    for (key, val) in config_vals.items():
+    for (key, val) in list(config_vals.items()):
         try:
             modified = config.set(key, val)
             if modified:

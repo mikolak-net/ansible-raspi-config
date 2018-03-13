@@ -83,7 +83,7 @@ def main():
     if is_pi2:
         oc_config = read_oc_params()
         config_file = ConfigFile()
-        for (param, value) in oc_config.items():
+        for (param, value) in list(oc_config.items()):
             config_file.set(param, value)
         module.exit_json(changed=config_file.is_changed, msg="Is Pi2, ensured optimum CPU params.")
     else:
