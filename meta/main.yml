@@ -13,7 +13,7 @@ galaxy_info:
     - system
 
 dependencies:
-  - name: "tersmitten.locales"
+  - name: "oefenweb.locales"
     version: "v1.0.16"
     locales_present:
       - "{{ raspi_config_locale }}"
