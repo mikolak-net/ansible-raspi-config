@@ -1,7 +1,7 @@
-raspi-config
+raspi_config
 =========
 
-[![Ansible Role](https://img.shields.io/ansible/role/3964.svg?style=plastic)](https://galaxy.ansible.com/mikolak/raspi-config/) [![Ansible Role](https://img.shields.io/ansible/role/d/3964.svg?style=plastic)](https://galaxy.ansible.com/mikolak/raspi-config/)
+[![Ansible Role](https://img.shields.io/ansible/role/30050.svg?style=plastic)](https://galaxy.ansible.com/mikolak-net/raspi-config/) [![Ansible Role](https://img.shields.io/ansible/role/d/30050.svg?style=plastic)](https://galaxy.ansible.com/mikolak-net/raspi-config/)
 
 A configuration role for Raspbian-based Raspberry Pi machines. Provides the following features:
  - exposes and/or emulates those `raspi-config` options that are most relevant to headless servers (see _Rule Variables_),
@@ -15,8 +15,10 @@ None, other than installing the role itself. To do that, create a `requirements.
 the following contents:
 
 ```yaml
-- name: mikolak.raspi-config
+- name: mikolak-net.raspi_config
 ```
+
+**(note the `_` underscore instead of the `-` hyphen in `raspi_config`)**
 
 and then run:
 
@@ -27,7 +29,7 @@ in the requirements file.
 
 _Note:_ you can also install the role directly:
 
-    ansible-galaxy install mikolak.raspi-config
+    ansible-galaxy install mikolak-net.raspi_config
     
 but creating a requirements file is just good practice.
 
@@ -82,7 +84,7 @@ Example Playbook
   remote_user: pi
   become: true
   roles:
-     - role: mikolak.raspi-config
+     - role: mikolak-net.raspi_config
        raspi_config_replace_user:
          name: mainuser
          path_to_ssh_key: "~/.ssh/my_pub_key_id_rsa.pub"
@@ -100,5 +102,5 @@ Issues should be reported on the [project page](https://github.com/mikolak-net/a
 
 Thanks to:
  - [Colin Nolan](https://github.com/colin-nolan) for various contributions, including the reboot handler fix and general support.
- - [Erik Berkun-Drevnig](https://github.com/eberkund) for the locale depenedency fix.
+ - [Erik Berkun-Drevnig](https://github.com/eberkund) for the locale dependency fix.
  - [Thomas Redmer](https://github.com/Skorfulose) for the `become` modernization.
