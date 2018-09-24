@@ -99,4 +99,6 @@ Author Information
 Issues should be reported on the [project page](https://github.com/mikolak-net/ansible-raspi-config).
 
 Thanks to:
- - [Colin Nolan](https://github.com/colin-nolan) for contributing reboot handler fixes.
+ - [Colin Nolan](https://github.com/colin-nolan) for various contributions, including the reboot handler fix and general support.
+ - [Erik Berkun-Drevnig](https://github.com/eberkund) for the locale depenedency fix.
+ - [Thomas Redmer](https://github.com/Skorfulose) for the `become` modernization.
