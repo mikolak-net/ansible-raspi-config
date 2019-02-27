@@ -8,14 +8,14 @@
 - name: check for login
   command: sshpass -p {{raspi_config_auth_test_password}} ssh {{raspi_config_auth_test_username}}@localhost -o NoHostAuthenticationForLocalhost=yes "echo {{raspi_config_auth_test_string}}"
   register: auth_test
-  changed_when: False
-  failed_when: False
+  changed_when: false
+  failed_when: false
 
 - name: optional warning
   debug:
     msg: "{{ raspi_config_auth_test_fail_msg }}"
   when: "raspi_config_auth_test_string == auth_test.stdout"
-  changed_when: "raspi_config_auth_test_string == auth_test.stdout" # for highlighting purposes
+  changed_when: "raspi_config_auth_test_string == auth_test.stdout"      # for highlighting purposes
   failed_when: "raspi_config_fail_on_auth_test and raspi_config_replace_user['name'] != None"
 
 - name: additional info

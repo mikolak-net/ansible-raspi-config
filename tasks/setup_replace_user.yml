@@ -3,7 +3,7 @@
 - name: Create user {{ raspi_config_replace_user['name'] }}
   user:
     name: "{{ raspi_config_replace_user['name'] }}"
-  changed_when: True #to force handler call
+  changed_when: true      # to force handler call
   notify:
     - remove default user
 

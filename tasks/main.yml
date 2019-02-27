@@ -2,7 +2,7 @@
 
 - name: update all packages
   apt:
-    update_cache: yes
+    update_cache: true
     upgrade: dist
   when: raspi_config_update_packages
 

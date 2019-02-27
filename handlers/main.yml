@@ -20,7 +20,7 @@
   user: name={{raspi_config_auth_test_username}} state=absent force=yes
   async: 0
   poll: 0
-  ignore_errors: True
+  ignore_errors: true
 
 - name: restart timezone dependent services
   service:
