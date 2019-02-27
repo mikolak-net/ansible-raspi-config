@@ -22,7 +22,7 @@ raspi_config_enable_camera: false
 # ignored if "raspi_config_replace_user" is set (warning will still display)
 raspi_config_fail_on_auth_test: true
 # user to replace the default "pi" user with
-# falseTE: if you use this for the first time as "pi", any post_tasks will fail!
+# NOTE: if you use this for the first time as "pi", any post_tasks will fail!
 raspi_config_replace_user:
   name:
   # LOCAL path to your public key file
