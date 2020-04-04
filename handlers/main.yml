@@ -17,7 +17,7 @@
 
 - name: remove default user
   when: "raspi_config_replace_user['name'] != raspi_config_auth_test_username"
-  user: name={{raspi_config_auth_test_username}} state=absent force=yes
+  user: name={{ raspi_config_auth_test_username }} state=absent force=yes
   async: 0
   poll: 0
   ignore_errors: true
