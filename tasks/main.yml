@@ -19,6 +19,13 @@
 - name: ensure filesystem is resized
   expand_fs:
   when: raspi_config_expanded_filesystem
+  register: expand_fs_output
+
+- name: filesystem expand non-action check
+  debug:
+    msg: "{{ expand_fs_output.stderr }}"
+  when: "raspi_config_expanded_filesystem and expand_fs_output.stderr.startswith('WARN')"
+  changed_when: "True"      # for highlighting purposes
 
 - name: ensure mem split
   pi_boot_config:
