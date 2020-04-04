@@ -14,7 +14,7 @@ galaxy_info:
 
 dependencies:
   - name: "oefenweb.locales"
-    version: "v1.0.16"
+    version: "v1.0.40"
     locales_present:
       - "{{ raspi_config_locale }}"
     locales_default:
